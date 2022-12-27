@@ -9,38 +9,59 @@ const questions = () => {
   return inquirer.prompt([
     {
       type: 'input',
-      name: 'title',
+      name: 'Title',
       message: 'What is the title of your project?',
     },
     {
       type: 'input',
-      name: 'description',
+      name: 'Description',
       message: 'Provide a description of your project.',
     },
     {
       type: 'input',
-      name: 'installation',
+      name: 'Installation',
       message: 'How does one install the application to their device?',
     },
     {
       type: 'input',
-      name: 'usage',
+      name: 'Usage',
       message: 'Describe how one would use the application?',
     },
-    // {
-    //   type: 'list or whatever.........',
-    //   name: 'licence',
-    //   message: 'Enter your GitHub Username',
-    // },
+    {
+      type: 'list',
+      name: 'Licence',
+      message: 'What licence did you use?',
+      choices: ['Apache', 'Boost', 'BSD', 'Creative Commons', 'Eclipse', 'GNU', 'The Organization for Ethical Source', 'IBM', 'ISC','MIT', 'Mozilla', 'Open Data Commons','Perl', 'SIL', 'WTFPL', 'Zlib', 'Unlicense'],
+    },
     {
       type: 'input',
-      name: 'contributing',
-      message: 'Enter your LinkedIn URL.',
+      name: 'Contributing',
+      message: 'Who worked on the project?',
+    },
+    {
+      type: 'input',
+      name: 'Tests',
+      message: 'How does one test the application?',
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'What is your email?',
+    },
+    {
+      type: 'input',
+      name: 'github',
+      message: 'What is your GitHub username?',
+    },
+    {
+      type: 'input',
+      name: 'githubLink',
+      message: 'What is the link to your GitHub?',
     },
   ]);
 };
 
-const writeToFile = ({ name, location, github, linkedin }) =>
+const writeToFile = ({ Title, Description, Installation, Usage, Licence, Contributing, Tests, email, github, githubLink }) =>
   `<!DOCTYPE html>
 <html lang="en">
 <head>
