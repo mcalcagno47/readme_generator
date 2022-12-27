@@ -74,7 +74,7 @@ const writeToFile = ({ Title, Description, Installation, Usage, Licence, Contrib
   <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">${Title}</h1>
-    <h3>Table of Contents<h3>
+    <h3>Table of Contents</h3>
         <ul>        
             <li>##Description</li>
             <li>##Installation</li>
