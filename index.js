@@ -62,7 +62,7 @@ const questions = () => {
 };
 
 const writeToFile = ({ Title, Description, Installation, Usage, Licence, Contributing, Tests, email, github, githubLink }) =>
-  `<!DOCTYPE html>
+`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -73,12 +73,33 @@ const writeToFile = ({ Title, Description, Installation, Usage, Licence, Contrib
 <body>
   <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Hi! My name is ${name}</h1>
-    <p class="lead">I am from ${location}.</p>
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-    <ul class="list-group">
-      <li class="list-group-item">My GitHub username is ${github}</li>
-      <li class="list-group-item">LinkedIn: ${linkedin}</li>
+    <h1 class="display-4">${Title}</h1>
+    <h3>Table of Contents<h3>
+        <ul>        
+            <li>##Description</li>
+            <li>##Installation</li>
+            <li>##Usage</li>
+            <li>##Licence</li>
+            <li>##Tests</li>
+            <li>##Questions</li>
+        </ul>
+    <h3>Description</h3>
+        <p>${Description}</p>
+    <h3>Installation</h3>
+        <p>${Installation}</p>
+    <h3>Usage</h3>
+        <p>${Usage}</p>
+    <h3>Licence</h3>
+        <p>${Licence}</p>
+    <h3>Contributing</h3>
+        <p>${Contributing}</p>
+    <h3>Tests</h3>
+        <p>${Tests}</p>
+    <h3>Questions</h3>
+    <ul>
+        <li>Email address: ${email}</li>
+        <li>GitHub username: ${github}</li>
+        <li>GitHub link: ${githubLink}</li>
     </ul>
   </div>
 </div>
