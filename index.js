@@ -1,9 +1,6 @@
 const inquirer = require('inquirer');
 
-// Node v10+ includes a promises module as an alternative to using callbacks with file system methods.
 const { writeFile } = require('fs').promises;
-
-// Use writeFileSync method to use promises instead of a callback function
 
 const questions = () => {
   return inquirer.prompt([
@@ -76,12 +73,11 @@ const writeToFile = ({ Title, Description, Installation, Usage, Licence, Contrib
     <h1 class="display-4">${Title}</h1>
     <h3>Table of Contents</h3>
         <ul>        
-            <li>##Description</li>
-            <li>##Installation</li>
-            <li>##Usage</li>
-            <li>##Licence</li>
-            <li>##Tests</li>
-            <li>##Questions</li>
+        - <li>[Description](#description)</li>
+        - <li>[Installation](#installation)</li>
+        - <li>[Usage](#usage)</li>
+        - <li>[Contributing](#Contributing)</li>
+        - <li>[Questions](#Questions)</li>
         </ul>
     <h3>Description</h3>
         <p>${Description}</p>
@@ -106,11 +102,8 @@ const writeToFile = ({ Title, Description, Installation, Usage, Licence, Contrib
 </body>
 </html>`;
 
-// Bonus using writeFileSync as a promise
 const init = () => {
   questions()
-    // Use writeFile method imported from fs.promises to use promises instead of
-    // a callback function
     .then((answers) => writeFile('index.html', writeToFile(answers)))
     .then(() => console.log('Successfully wrote to index.html'))
     .catch((err) => console.error(err));
